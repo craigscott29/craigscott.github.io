@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.container-fluid {
+    height: 100vh;
+}
+
+a.cs-anchor {
+    text-decoration: none;
+    color: white;
+    transition: all 0.25s;
+}
+
+a.cs-anchor__header {
+    font-family: 'Changa One', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+a.cs-anchor:hover, a.cs-anchor:focus {
+    color: #00E8C4;
+    transition: all 0.25s;
+}
+
+.cs-bg-primary {
+    background-color: #00967F;
+}
