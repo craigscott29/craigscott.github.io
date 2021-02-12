@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa+One&family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
+
 .container-fluid {
     height: 100vh;
 }
@@ -24,5 +26,5 @@ a.cs-anchor:hover, a.cs-anchor:focus {
 }
 
 .cs-bg-primary {
-    background-color: #00967F;
+    background-color: #1F7B6A;
 }
