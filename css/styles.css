@@ -9,6 +9,20 @@ body {
     height: 100vh;
 }
 
+h1.cs-page-header {
+    margin-bottom: 0;
+    line-height: 0.85;
+}
+
+h2.cs-page-subheader {
+    color: lightgray;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.25rem;
+    transform: scaleY(0.8);
+    margin-left: 0.15rem;
+}
+
 a.cs-anchor {
     outline: none;
     text-decoration: none;
