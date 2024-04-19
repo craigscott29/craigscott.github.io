@@ -1,0 +1,137 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page container styles */
+.page-container {
+    display: flex;
+    justify-content: center; /* Center the splash-container horizontally */
+    align-items: center; /* Center the splash-container vertically */
+    height: 100vh; /* Make the page-container fill the viewport height */
+    padding: 1.5em; /* Adjust the padding as needed */
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Splash container */
+.splash-container {
+    width: 70%; /* Width of 70% for larger screens */
+    max-width: 100%; /* Up to 100% on smaller screens */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2em; /* Padding set in em units */
+    border-radius: 10px;
+    text-align: center; /* Center text in the container */
+}
+
+/* Coming Soon message styles */
+.coming-soon-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #c6943a;
+    margin-bottom: 1em;
+}
+
+/* Logo styles */
+.logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Contact details styles */
+.contact-details {
+    margin-top: 1em; /* Add margin at the top */
+    /* Adjustments for contact details to be centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+/* CTA button styles */
+.cta-button {
+    display: inline-block; /* Display as inline-block */
+    padding: 0.5em 1em; /* Padding for button */
+    margin: 0.5em; /* Margin between buttons */
+    color: white; /* Text color */
+    background-color: #c6943a; /* Background color (brand color) */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the button text bold */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Transition for smooth hover effect */
+}
+
+/* CTA button hover and focus styles */
+.cta-button:hover,
+.cta-button:focus {
+    background-color: #505c5a; /* Background color on hover and focus */
+    color: #c6943a; /* Change text color on hover and focus */
+}
+
+/* Blurb styles */
+.blurb {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #505c5a; /* Updated blurb text color */
+    padding-bottom: 1.5em; /* Add padding below the blurb */
+    text-align: left; /* Keep blurb left-aligned */
+}
+
+/* Paragraph styles */
+p {
+    padding: 0.5em 0; /* Add vertical padding between paragraphs */
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    .splash-container {
+        width: 100%; /* Set the container width to 100% */
+        padding: 1em; /* Reduce padding for smaller screens */
+    }
+
+    /* Logo styles */
+    .logo {
+        max-width: 250px; /* Increased max-width to allow a larger logo */
+        margin-bottom: 20px;
+    }
+
+
+    .coming-soon-message {
+        font-size: 1.2rem; /* Reduce font size for smaller screens */
+    }
+
+    .contact-details {
+        margin-top: 0.5em; /* Adjust margin */
+        display: flex; /* Use flexbox for better layout */
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons */
+    }
+
+    .cta-button {
+        width: 100%; /* Make buttons full-width */
+        margin: 0.2em 0; /* Adjust margin */
+    }
+
+    .blurb {
+        font-size: 1rem; /* Reduce font size */
+        line-height: 1.4; /* Adjust line height */
+        padding-bottom: 1em; /* Reduce padding */
+    }
+
+    /* Reduce padding between paragraphs */
+    p {
+        padding: 0.3em 0;
+    }
+}
