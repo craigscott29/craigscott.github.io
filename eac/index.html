@@ -4,84 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E.A.C. Repair - Mobile Equipment Repair Services | Western New Brunswick</title>
-    
-    <!-- Bulma CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
     <style>
         :root {
-            --primary-color: #4f5c5a;
-            --secondary-color: #3e4846;
-            --accent-color: #c6943b;
-            --accent-light: #e5b455;
+            --primary-gold: #c6943b;
+            --primary-gold-dark: #b5842e;
+            --secondary-teal: #4f5c5a;
+            --secondary-teal-dark: #3a453f;
+            --light-bg: #f8f9f9;
+            --lighter-bg: #eef0f0;
         }
 
-        /* Custom styles to override Bulma where needed */
-        .navbar-custom {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        /* Apply Roboto font globally */
+        body, 
+        .title, 
+        .subtitle, 
+        .navbar-item,
+        .button,
+        .label,
+        .input,
+        .textarea,
+        .content {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Specific font weight applications */
+        .title,
+        .navbar-brand .navbar-item,
+        .stat-number,
+        .contact-item strong,
+        .label {
+            font-weight: 700; /* Bold */
+        }
+
+        .subtitle,
+        .content,
+        .navbar-menu .navbar-item,
+        body {
+            font-weight: 400; /* Regular */
+        }
+
+        /* Custom Bulma overrides */
+        a.navbar-item:focus {
+            background-color: unset;
+        }
+
+        a {
+            color: #4a4a4a;
+        }
+
+        a:hover,
+        a:focus {
+            color: var(--primary-gold);
+        }
+
+        .navbar-item img {
+            max-height: 3.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .navbar-burger {
+            margin-top: 1rem;
+            color: white;
+        }
+
+        .navbar-burger:hover {
+            background-color: unset;
+        }
+
+        .has-background-primary-gold {
+            background-color: var(--primary-gold) !important;
+        }
+
+        .has-background-secondary-teal {
+            background-color: var(--secondary-teal) !important;
+        }
+
+        .has-text-primary-gold {
+            color: var(--primary-gold) !important;
+        }
+
+        .has-text-secondary-teal {
+            color: var(--secondary-teal) !important;
+        }
+
+        .button.is-primary-gold {
+            background: linear-gradient(45deg, var(--primary-gold), var(--primary-gold-dark));
+            border-color: transparent;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(198, 148, 59, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button.is-primary-gold::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .button.is-primary-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(198, 148, 59, 0.4);
+        }
+
+        .button.is-primary-gold:hover::before {
+            left: 100%;
+        }
+
+        .button.is-outlined-white {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .button.is-outlined-white:hover {
+            background: white;
+            color: var(--secondary-teal);
+        }
+
+        .navbar-menu {
+            background-color: unset;
+        }
+
+        /* Custom navbar styling */
+        .site-logo {
+            padding: 1rem 0;
+        }
+        .navbar.is-custom {
+            background: linear-gradient(135deg, var(--secondary-teal) 0%, var(--secondary-teal-dark) 100%);
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             backdrop-filter: blur(10px);
         }
 
-        .navbar-brand .navbar-item img {
-            height: 50px;
-            max-height: 50px;
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        .navbar-brand .navbar-item {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .navbar-item,
-        .navbar-link {
+        .navbar-menu .navbar-item {
             color: white !important;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
         }
 
-        .navbar-item:hover,
-        .navbar-link:hover {
-            background-color: transparent !important;
-            color: var(--accent-light) !important;
+        .navbar-menu .navbar-item:hover {
+            color: var(--primary-gold) !important;
             transform: translateY(-2px);
         }
 
-        .navbar-item::after {
+        .navbar-menu .navbar-item::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-light);
+            left: 0;
+            background: var(--primary-gold);
             transition: width 0.3s ease;
         }
 
-        .navbar-item:hover::after {
-            width: 80%;
+        .navbar-menu .navbar-item:hover::after {
+            width: 100%;
         }
 
-        .navbar-burger {
-            color: white;
-        }
-
-        .navbar-menu {
-            background: rgba(79, 92, 90, 0.95);
-        }
-
-        /* Hero Section */
-        .hero.is-fullheight {
-            background: linear-gradient(135deg, rgba(79, 92, 90, 0.85), rgba(62, 72, 70, 0.75)), 
+        /* Hero section styling */
+        .hero.is-custom {
+            background: linear-gradient(135deg, rgba(79, 92, 90, 0.9), rgba(58, 69, 63, 0.8)), 
                         url('images/background.jpg');
             background-size: cover;
             background-position: center;
-            background-blend-mode: overlay;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
+        .hero.is-custom::before {
             content: '';
             position: absolute;
             top: 0;
@@ -102,22 +212,20 @@
             z-index: 2;
         }
 
-        .hero .title {
-            font-size: 4rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        .hero-title {
             animation: slideInLeft 1s ease-out;
         }
 
-        .hero .subtitle {
-            font-size: 1.5rem;
-            opacity: 0.9;
+        .hero-subtitle {
             animation: slideInRight 1s ease-out 0.3s both;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .hero-description {
             animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-buttons {
+            animation: fadeInUp 1s ease-out 0.9s both;
         }
 
         @keyframes slideInLeft {
@@ -135,62 +243,13 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        .buttons.hero-buttons {
-            animation: fadeInUp 1s ease-out 0.9s both;
-        }
-
-        .button.is-primary-custom {
-            background: linear-gradient(45deg, var(--accent-color), #b5852f);
-            border: none;
-            color: white;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(198, 148, 59, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .button.is-primary-custom::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .button.is-primary-custom:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(198, 148, 59, 0.4);
-        }
-
-        .button.is-primary-custom:hover::before {
-            left: 100%;
-        }
-
-        .button.is-outline-custom {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            border-radius: 50px;
-            font-weight: bold;
-        }
-
-        .button.is-outline-custom:hover {
-            background: white;
-            color: var(--primary-color);
-        }
-
-        /* Services Section */
-        .section.services {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        /* Services section */
+        .services-section {
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--lighter-bg) 100%);
             position: relative;
         }
 
-        .section.services::before {
+        .services-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -200,13 +259,11 @@
             background: linear-gradient(to bottom, rgba(79, 92, 90, 0.1), transparent);
         }
 
-        .title.section-title {
-            color: var(--primary-color);
+        .section-title {
             position: relative;
-            text-align: center;
         }
 
-        .title.section-title::after {
+        .section-title::after {
             content: '';
             position: absolute;
             bottom: -10px;
@@ -214,17 +271,19 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: linear-gradient(45deg, var(--accent-color), #b5852f);
+            background: linear-gradient(45deg, var(--primary-gold), var(--primary-gold-dark));
             border-radius: 2px;
         }
 
         .service-card {
-            height: 100%;
-            transition: all 0.3s ease;
+            background: white;
             border-radius: 20px;
-            border-top: 5px solid transparent;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            height: 100%;
+            z-index: 2;
         }
 
         .service-card::before {
@@ -234,6 +293,7 @@
             left: 0;
             right: 0;
             height: 5px;
+            background: linear-gradient(45deg, var(--primary-gold), var(--primary-gold-dark));
         }
 
         .service-card:hover {
@@ -244,7 +304,7 @@
         .service-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(45deg, var(--accent-color), #b5852f);
+            background: linear-gradient(45deg, var(--primary-gold), var(--primary-gold-dark));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -256,23 +316,18 @@
         }
 
         .service-card:hover .service-icon {
-            background: linear-gradient(45deg, #b5852f, #a47329);
+            background: linear-gradient(45deg, var(--primary-gold-dark), #a16e1f);
             transform: scale(1.1) rotate(5deg);
         }
 
-        .service-card .title {
-            color: var(--primary-color);
-        }
-
-        /* About Section */
-        .section.about {
-            background: var(--primary-color);
-            color: white;
+        /* About section */
+        .about-section {
+            background: var(--secondary-teal);
             position: relative;
             overflow: hidden;
         }
 
-        .section.about::before {
+        .about-section::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -293,38 +348,34 @@
             z-index: 2;
         }
 
-        .about .title {
-            color: var(--accent-light);
-        }
-
         .stat-card {
             text-align: center;
             padding: 1.5rem;
             background: rgba(255,255,255,0.1);
             border-radius: 15px;
             backdrop-filter: blur(10px);
-            margin-bottom: 1rem;
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
-            color: var(--accent-light);
+            color: var(--primary-gold);
+            display: block;
         }
 
-        /* Contact Section */
-        .section.contact {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        /* Contact section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--lighter-bg) 100%);
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 2rem;
             padding: 1rem;
             background: rgba(198, 148, 59, 0.1);
             border-radius: 10px;
             transition: all 0.3s ease;
+            margin-bottom: 1rem;
         }
 
         .contact-item:hover {
@@ -335,66 +386,89 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(45deg, var(--accent-color), #b5852f);
+            background: linear-gradient(45deg, var(--primary-gold), var(--primary-gold-dark));
             border-radius: 50%;
             display: flex;
+            flex-shrink: 0;
             align-items: center;
             justify-content: center;
             margin-right: 1.5rem;
             color: white;
-            font-size: 1.2rem;
+            font-weight: bold;
         }
 
-        .input:focus,
-        .textarea:focus {
-            border-color: var(--accent-color);
+        .input:focus, .textarea:focus {
+            border-color: var(--primary-gold);
             box-shadow: 0 0 0 0.125em rgba(198, 148, 59, 0.25);
         }
 
-        .button.is-submit {
-            background: linear-gradient(45deg, var(--accent-color), #b5852f);
-            border: none;
-            color: white;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: all 0.3s ease;
+        /* Floating elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
         }
 
-        .button.is-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(198, 148, 59, 0.3);
+        .floating-element {
+            position: absolute;
+            background: rgba(198, 148, 59, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
         }
 
-        /* Footer */
-        .footer.custom-footer {
-            background: var(--primary-color);
-            color: white;
+        .floating-element:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
         }
 
-        /* Scroll effect for navbar */
-        .navbar-scrolled {
+        .floating-element:nth-child(2) {
+            width: 40px;
+            height: 40px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 30%;
+            left: 80%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Navbar scroll effect */
+        .navbar.scrolled {
             background: rgba(79, 92, 90, 0.95) !important;
-        }
-
-        /* Animation classes for intersection observer */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in-up.is-visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-brand is-fixed-top navbar-custom" role="navigation" aria-label="main navigation">
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar is-fixed-top is-custom" role="navigation">
         <div class="container">
+        <div class="navbar-brand">
             <a class="navbar-item" href="#home">
-                <img src="images/eac-logo.png" alt="E.A.C. Compact Tractor & Lawn Mower Repair">
+                <img src="images/eac-logo.png" />
             </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
                 <span aria-hidden="true"></span>
@@ -402,7 +476,6 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-
         <div id="navbarMenu" class="navbar-menu">
             <div class="navbar-end">
                 <a class="navbar-item" href="#home">Home</a>
@@ -411,31 +484,34 @@
                 <a class="navbar-item" href="#contact">Contact</a>
             </div>
         </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero is-fullheight has-text-white">
+    <section id="home" class="hero is-fullheight is-custom">
         <div class="hero-body">
             <div class="container">
-                <div class="hero-content">
-                    <h1 class="title is-1 has-text-white">Expert Mobile Repair</h1>
-                    <h2 class="subtitle is-3 has-text-white">We Come to You</h2>
-                    <p class="is-size-5 mb-5">
-                        Professional on-site repair services for tractors, farm equipment, and lawn mowers throughout Western New Brunswick. Our experienced technicians bring the workshop to your location.
-                    </p>
-                    <div class="buttons hero-buttons">
-                        <a href="#contact" class="button is-medium is-primary-custom mr-3">
-                            <span class="icon">
-                                <i class="fas fa-quote-left"></i>
-                            </span>
-                            <span>Get a Free Quote</span>
-                        </a>
-                        <a href="tel:15063927751" class="button is-medium is-outline-custom">
-                            <span class="icon">
-                                <i class="fas fa-phone"></i>
-                            </span>
-                            <span>Call Now</span>
-                        </a>
+                <div class="columns">
+                    <div class="column is-8" style="padding-top: 5rem">
+                        <h1 class="title is-1 has-text-white hero-title">Expert Mobile Repair</h1>
+                        <h2 class="subtitle is-3 has-text-white hero-subtitle">We Come to You</h2>
+                        <p class="is-size-5 has-text-white mb-5 hero-description">
+                            Professional on-site repair services for tractors, farm equipment, and lawn mowers throughout Woodstock, Hartland, and surrounding areas in Western New Brunswick. Our experienced technicians bring the workshop to your location.
+                        </p>
+                        <div class="buttons">
+                            <a href="#contact" class="button is-large is-primary-gold is-rounded">
+                                <span class="icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </span>
+                                <span>Get a Free Quote</span>
+                            </a>
+                            <a href="tel:15063927751" class="button is-large is-outlined-white is-rounded">
+                                <span class="icon">
+                                    <i class="fas fa-phone"></i>
+                                </span>
+                                <span>Call Now</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -443,40 +519,46 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section services is-large">
+    <section id="services" class="section is-large services-section">
         <div class="container">
-            <h2 class="title is-2 section-title mb-6">Our Services</h2>
-            <div class="columns is-multiline">
+            <h2 class="title is-2 has-text-centered has-text-secondary-teal section-title mb-6">Our Services</h2>
+            <div class="columns is-multiline mt-6">
                 <div class="column is-4">
-                    <div class="card service-card fade-in-up">
-                        <div class="card-content has-text-centered">
+                    <div class="box service-card p-6">
+                        <div class="has-text-centered">
                             <div class="service-icon">
                                 <i class="fas fa-tractor"></i>
                             </div>
-                            <h3 class="title is-4">Tractor Repair</h3>
-                            <p>Complete maintenance and repair services for all types of tractors. From engine work to hydraulic systems, we keep your tractors running efficiently.</p>
+                            <h3 class="title is-4 has-text-secondary-teal">Tractor Repair</h3>
+                            <p class="content">
+                                Complete maintenance and repair services for all types of tractors. From engine work to hydraulic systems, we keep your tractors running efficiently.
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="column is-4">
-                    <div class="card service-card fade-in-up">
-                        <div class="card-content has-text-centered">
+                    <div class="box service-card p-6">
+                        <div class="has-text-centered">
+                            <div class="service-icon">
+                                <i class="fas fa-wheat-awn"></i>
+                            </div>
+                            <h3 class="title is-4 has-text-secondary-teal">Farm Equipment</h3>
+                            <p class="content">
+                                Specialized repair services for harvesting equipment, plows, cultivators, and other farm machinery. We understand the demands of agricultural work.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="box service-card p-6">
+                        <div class="has-text-centered">
                             <div class="service-icon">
                                 <i class="fas fa-seedling"></i>
                             </div>
-                            <h3 class="title is-4">Farm Equipment</h3>
-                            <p>Specialized repair services for harvesting equipment, plows, cultivators, and other farm machinery. We understand the demands of agricultural work.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-4">
-                    <div class="card service-card fade-in-up">
-                        <div class="card-content has-text-centered">
-                            <div class="service-icon">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <h3 class="title is-4">Lawn Mowers</h3>
-                            <p>Professional maintenance and repair for residential and commercial lawn mowers. Keep your landscape equipment in perfect working condition.</p>
+                            <h3 class="title is-4 has-text-secondary-teal">Lawn Mowers</h3>
+                            <p class="content">
+                                Professional maintenance and repair for residential and commercial lawn mowers. Keep your landscape equipment in perfect working condition.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -485,47 +567,47 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section about is-large">
-        <div class="container">
-            <div class="about-content">
-                <div class="columns is-vcentered">
-                    <div class="column is-6">
-                        <h2 class="title is-2">Why Choose E.A.C. Repair?</h2>
-                        <p class="is-size-5 mb-4">
+    <section id="about" class="section is-large about-section has-text-white">
+        <div class="container about-content">
+            <div class="columns is-vcentered">
+                <div class="column is-6">
+                    <h2 class="title is-2 has-text-primary-gold">Why Choose E.A.C. Repair?</h2>
+                    <div class="content is-size-5">
+                        <p>
                             With years of experience serving Western New Brunswick, we've built our reputation on reliable, professional service that comes directly to you.
                         </p>
-                        <p class="is-size-5 mb-4">
+                        <p>
                             Our mobile repair service means no downtime transporting your equipment. We bring all the necessary tools and expertise to your farm, home, or business location.
                         </p>
-                        <p class="is-size-5">
+                        <p>
                             From Woodstock to surrounding communities, we're your trusted partner for keeping your machinery running smoothly.
                         </p>
                     </div>
-                    <div class="column is-6">
-                        <div class="columns is-multiline">
-                            <div class="column is-6">
-                                <div class="stat-card">
-                                    <div class="stat-number">500+</div>
-                                    <div>Repairs Completed</div>
-                                </div>
+                </div>
+                <div class="column is-6">
+                    <div class="columns is-multiline">
+                        <div class="column is-6">
+                            <div class="box stat-card">
+                                <span class="stat-number">500+</span>
+                                <span class="has-text-white">Repairs Completed</span>
                             </div>
-                            <div class="column is-6">
-                                <div class="stat-card">
-                                    <div class="stat-number">24hr</div>
-                                    <div>Response Time</div>
-                                </div>
+                        </div>
+                        <div class="column is-6">
+                            <div class="box stat-card">
+                                <span class="stat-number">24hr</span>
+                                <span class="has-text-white">Response Time</span>
                             </div>
-                            <div class="column is-6">
-                                <div class="stat-card">
-                                    <div class="stat-number">100%</div>
-                                    <div>Mobile Service</div>
-                                </div>
+                        </div>
+                        <div class="column is-6">
+                            <div class="box stat-card">
+                                <span class="stat-number">100%</span>
+                                <span class="has-text-white">Mobile Service</span>
                             </div>
-                            <div class="column is-6">
-                                <div class="stat-card">
-                                    <div class="stat-number">15+</div>
-                                    <div>Years Experience</div>
-                                </div>
+                        </div>
+                        <div class="column is-6">
+                            <div class="box stat-card">
+                                <span class="stat-number">15+</span>
+                                <span class="has-text-white">Years Experience</span>
                             </div>
                         </div>
                     </div>
@@ -535,122 +617,118 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact is-large">
-        <div class="container">
-            <h2 class="title is-2 section-title mb-6">Get In Touch</h2>
-            <div class="columns">
+    <section id="contact" class="section is-large contact-section">
+        <div class="container" style="z-index:2">
+            <h2 class="title is-2 has-text-centered has-text-secondary-teal section-title mb-6">Get In Touch</h2>
+            <div class="columns mt-6">
                 <div class="column is-6">
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="title is-4 has-text-grey-darker mb-5">Contact Information</h3>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <strong>Service Area</strong><br>
-                                    Woodstock, Hartland, and surrounding areas
-                                </div>
+                    <div class="box p-5">
+                        <h3 class="title is-4 has-text-secondary-teal mb-5">Contact Information</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <strong>Phone</strong><br>
-                                    <a href="tel:15063927751" title="Call E.A.C. Repair">506-392-7751</a>
-                                </div>
+                            <div>
+                                <strong>Service Area</strong><br>
+                                Woodstock, Hartland, and surrounding areas
                             </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <strong>Email</strong><br>
-                                    <a href="mailto:info@eacrepair.ca" title="Email E.A.C. Repair">info@eacrepair.ca</a>
-                                </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
                             </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div>
-                                    <strong>Hours</strong><br>
-                                    Mon-Fri: 8AM-5PM<br>
-                                </div>
+                            <div>
+                                <strong>Phone</strong><br>
+                                <a href="tel1053927751" title="Call E.A.C. Repair">506-392-7751</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email</strong><br>
+                                <a href="mailto:service@eacrepair.ca" title="Email E.A.C. Repair">service@eacrepair.ca</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <strong>Hours</strong><br>
+                                Mon-Fri: 8AM-5PM<br>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="column is-6">
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="title is-4 has-text-grey-darker mb-5">Request Service</h3>
-                            <form onsubmit="handleSubmit(event)">
-                                <div class="field">
-                                    <label class="label">Name</label>
-                                    <div class="control has-icons-left">
-                                        <input class="input" type="text" id="name" required>
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-user"></i>
+                    <div class="box p-5">
+                        <h3 class="title is-4 has-text-secondary-teal mb-5">Request Service</h3>
+                        <form onsubmit="handleSubmit(event)">
+                            <div class="field">
+                                <label class="label has-text-secondary-teal">Name</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" id="name" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <label class="label has-text-secondary-teal">Phone</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="tel" id="phone" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-phone"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <label class="label has-text-secondary-teal">Email</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="email" id="email" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <label class="label has-text-secondary-teal">Equipment Type</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" id="equipment" placeholder="e.g., John Deere Tractor, Riding Mower" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-cogs"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <label class="label has-text-secondary-teal">Description of Issue</label>
+                                <div class="control">
+                                    <textarea class="textarea" id="message" rows="4" placeholder="Please describe the problem you're experiencing..." required></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <div class="control">
+                                    <button type="submit" class="button is-primary-gold is-fullwidth is-rounded">
+                                        <span class="icon">
+                                            <i class="fas fa-paper-plane"></i>
                                         </span>
-                                    </div>
+                                        <span>Request a Service Call</span>
+                                    </button>
                                 </div>
-                                
-                                <div class="field">
-                                    <label class="label">Phone</label>
-                                    <div class="control has-icons-left">
-                                        <input class="input" type="tel" id="phone" required>
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-phone"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                
-                                <div class="field">
-                                    <label class="label">Email</label>
-                                    <div class="control has-icons-left">
-                                        <input class="input" type="email" id="email">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-envelope"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                
-                                <div class="field">
-                                    <label class="label">Equipment Type</label>
-                                    <div class="control has-icons-left">
-                                        <input class="input" type="text" id="equipment" placeholder="e.g., John Deere Tractor, Riding Mower">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-cogs"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                
-                                <div class="field">
-                                    <label class="label">Description of Issue</label>
-                                    <div class="control">
-                                        <textarea class="textarea" id="message" rows="4" placeholder="Please describe the problem you're experiencing..."></textarea>
-                                    </div>
-                                </div>
-                                
-                                <div class="field">
-                                    <div class="control">
-                                        <button type="submit" class="button is-medium is-submit is-fullwidth">
-                                            <span class="icon">
-                                                <i class="fas fa-paper-plane"></i>
-                                            </span>
-                                            <span>Request a Service Call</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -658,40 +736,29 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer custom-footer">
-        <div class="container">
-            <div class="content has-text-centered">
-                <p>&copy; 2025 E.A.C. Repair. All rights reserved. | Professional Mobile Equipment Repair Services in Western New Brunswick</p>
-            </div>
+    <footer class="footer has-background-secondary-teal has-text-white">
+        <div class="content has-text-centered">
+            <p>
+                &copy; 2025 E.A.C. Repair. All rights reserved. | Professional Mobile Equipment Repair Services in Western New Brunswick
+            </p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
+        // Navbar burger functionality
         document.addEventListener('DOMContentLoaded', () => {
             const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
+            
             if ($navbarBurgers.length > 0) {
                 $navbarBurgers.forEach(el => {
                     el.addEventListener('click', () => {
                         const target = el.dataset.target;
                         const $target = document.getElementById(target);
-
                         el.classList.toggle('is-active');
                         $target.classList.toggle('is-active');
                     });
                 });
             }
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.navbar-item').forEach(link => {
-            link.addEventListener('click', () => {
-                const navbarMenu = document.getElementById('navbarMenu');
-                const navbarBurger = document.querySelector('.navbar-burger');
-                navbarMenu.classList.remove('is-active');
-                navbarBurger.classList.remove('is-active');
-            });
         });
 
         // Smooth scrolling for navigation links
@@ -704,6 +771,14 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    
+                    // Close mobile menu if open
+                    const navbarBurger = document.querySelector('.navbar-burger');
+                    const navbarMenu = document.querySelector('.navbar-menu');
+                    if (navbarBurger.classList.contains('is-active')) {
+                        navbarBurger.classList.remove('is-active');
+                        navbarMenu.classList.remove('is-active');
+                    }
                 }
             });
         });
@@ -712,9 +787,9 @@
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 100) {
-                navbar.classList.add('navbar-scrolled');
+                navbar.classList.add('scrolled');
             } else {
-                navbar.classList.remove('navbar-scrolled');
+                navbar.classList.remove('scrolled');
             }
         });
 
@@ -722,6 +797,7 @@
         function handleSubmit(event) {
             event.preventDefault();
             
+            // Get form data
             const formData = {
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
@@ -730,8 +806,9 @@
                 message: document.getElementById('message').value
             };
             
+            // Simulate form submission
             const submitBtn = event.target.querySelector('button[type="submit"]');
-            const originalHtml = submitBtn.innerHTML;
+            const originalHTML = submitBtn.innerHTML;
             
             submitBtn.innerHTML = '<span class="icon"><i class="fas fa-spinner fa-spin"></i></span><span>Sending...</span>';
             submitBtn.classList.add('is-loading');
@@ -739,7 +816,7 @@
             setTimeout(() => {
                 alert('Thank you for your request! We\'ll contact you within 24 hours to schedule your service call.');
                 event.target.reset();
-                submitBtn.innerHTML = originalHtml;
+                submitBtn.innerHTML = originalHTML;
                 submitBtn.classList.remove('is-loading');
             }, 1500);
         }
@@ -753,17 +830,20 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        // Observe elements for animation
+        // Observe service cards for staggered animation
         document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.fade-in-up');
-            animatedElements.forEach((element, index) => {
-                element.style.transitionDelay = `${index * 0.2}s`;
-                observer.observe(element);
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = `all 0.6s ease ${index * 0.2}s`;
+                observer.observe(card);
             });
         });
     </script>
