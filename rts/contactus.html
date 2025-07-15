@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Rugged Technology Services (RTS) - New Brunswick Canada</title>
+    
+    <!-- Bulma CSS Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicons -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Rugged Technology Solutions | Managed IT Services, Cybersecurity & Automation in New Brunswick" />
+    <meta property="og:description" content="Rugged Technology Solutions (RTS) is a New Brunswick-based Managed Service Provider specializing in Managed IT Services, Cybersecurity, Cloud Solutions, Data Backup, Network Infrastructure, Automation, and Data and Service Migrations." />
+    <meta property="og:url" content="https://www.ruggedtech.ca" />
+    <meta property="og:image" content="http://www.ruggedtech.ca/images/logo.png" />
+    <meta property="og:type" content="website" />
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar is-fixed-top" id="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item logo-container" href="index.html">
+                    <span class="logo-text"><img src="images/logo.png" alt="Rugged Technology Services" /></span>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="index.html">Home</a>
+                    <a class="navbar-item" href="services.html">Services</a>
+                    <a class="navbar-item" href="about.html">About</a>
+                    <a class="navbar-item" href="contactus.html">Contact</a>
+                    <div class="navbar-item">
+                        <a href="contactus.html" class="button btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="contact">
+        <div class="hero-body is-vcentered">
+            <div class="container">
+                <div class="hero-content has-text-centered">
+                    <h1 class="hero-title">Get In Touch</h1>
+                    <p class="hero-subtitle">
+                        Ready to transform your IT infrastructure? Let's discuss how we can help your business 
+                        thrive with reliable, innovative technology solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods Section -->
+    <section class="section">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="title is-2 has-text-white">Contact Methods</h2>
+                <p class="subtitle is-4 has-text-grey-light">Multiple ways to reach our expert team</p>
+            </div>
+            <div class="columns is-multiline">
+                <div class="column is-4">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="contact-title">Call Us</h3>
+                        <p class="contact-description">
+                            Speak directly with our IT experts. Available for emergency support 24/7.
+                        </p>
+                        <div class="contact-info">
+                            <a href="tel:5064206969">506-420-6969</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="contact-title">Email Us</h3>
+                        <p class="contact-description">
+                            Send us detailed information about your IT needs and we'll respond promptly.
+                        </p>
+                        <div class="contact-info">
+                            <a href="mailto:staff@ruggedtech.ca">staff@ruggedtech.ca</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3 class="contact-title">Schedule Consultation</h3>
+                        <p class="contact-description">
+                            Book a free consultation to discuss your technology challenges and solutions.
+                        </p>
+                        <div class="contact-info">
+                            <a href="#contact-form">Free Consultation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form and Location Section -->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-variable is-8">
+                <div class="column is-7">
+                    <div class="contact-form" id="contact-form">
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle"></i>
+                            Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                        </div>
+                        
+                        <h3 class="title is-3 has-text-white mb-4">Send Us a Message</h3>
+                        <p class="has-text-light mb-5">Tell us about your IT challenges and goals. We'll provide a customized solution proposal.</p>
+                        
+                        <form id="contactForm" onsubmit="submitForm(event)">
+                            <div class="columns">
+                                <div class="column is-6">
+                                    <div class="form-field">
+                                        <label for="firstName">First Name *</label>
+                                        <input type="text" id="firstName" name="firstName" required placeholder="Your first name">
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="form-field">
+                                        <label for="lastName">Last Name *</label>
+                                        <input type="text" id="lastName" name="lastName" required placeholder="Your last name">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="columns">
+                                <div class="column is-6">
+                                    <div class="form-field">
+                                        <label for="email">Email Address *</label>
+                                        <input type="email" id="email" name="email" required placeholder="your.email@company.com">
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="form-field">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="(506) 123-4567">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="columns">
+                                <div class="column is-6">
+                                    <div class="form-field">
+                                        <label for="company">Company Name</label>
+                                        <input type="text" id="company" name="company" placeholder="Your company name">
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="form-field">
+                                        <label for="service">Service Interest</label>
+                                        <select id="service" name="service">
+                                            <option value="">Select a service</option>
+                                            <option value="managed-it">Managed IT Services</option>
+                                            <option value="cybersecurity">Cybersecurity</option>
+                                            <option value="cloud-solutions">Cloud Solutions</option>
+                                            <option value="automation">Business Automation</option>
+                                            <option value="data-backup">Data Backup & Recovery</option>
+                                            <option value="network">Network Infrastructure</option>
+                                            <option value="consultation">Free Consultation</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" required placeholder="Tell us about your IT challenges, goals, or questions. The more details you provide, the better we can help you."></textarea>
+                            </div>
+                            
+                            <div class="form-field">
+                                <button type="submit" class="btn-primary">
+                                    <span class="icon"><i class="fas fa-paper-plane"></i></span>
+                                    <span>Send Message</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="column is-5">
+                    <div class="location-card">
+                        <h3 class="title is-4 has-text-white mb-4">Our Location</h3>
+                        
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        
+                        <ul class="location-details">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Saint John, New Brunswick, Canada</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:5064206969">506-420-6969</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:staff@ruggedtech.ca">staff@ruggedtech.ca</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-globe"></i>
+                                <span>Serving all of the Maritimes</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="content mt-4">
+                            <h4 class="title is-6 has-text-white">Service Area</h4>
+                            <p class="has-text-light">
+                                Based in Saint John, New Brunswick, we proudly serve businesses throughout 
+                                the Maritime provinces including Nova Scotia and Prince Edward Island. 
+                                Remote support available nationwide.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours Section -->
+    <section class="section hours-section">
+        <div class="container">
+            <div class="columns is-variable is-8">
+                <div class="column is-6">
+                    <div class="hours-card">
+                        <h3 class="title is-4 has-text-white mb-4">Business Hours</h3>
+                        
+                        <div class="hours-item">
+                            <span class="hours-day">Monday</span>
+                            <span class="hours-time">8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Tuesday</span>
+                            <span class="hours-time">8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Wednesday</span>
+                            <span class="hours-time">8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Thursday</span>
+                            <span class="hours-time">8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Friday</span>
+                            <span class="hours-time">8:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Saturday</span>
+                            <span class="hours-time">By Appointment</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Sunday</span>
+                            <span class="hours-time">Emergency Only</span>
+                        </div>
+                        
+                        <div class="hours-emergency">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <strong>24/7 Emergency Support Available</strong><br>
+                            Critical IT issues don't wait for business hours
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column is-6">
+                    <div class="hours-card">
+                        <h3 class="title is-4 has-text-white mb-4">Response Times</h3>
+                        
+                        <div class="hours-item">
+                            <span class="hours-day">Critical Issues</span>
+                            <span class="hours-time" style="color: var(--danger-red); font-weight: 600;">Within 1 Hour</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">High Priority</span>
+                            <span class="hours-time" style="color: var(--accent-orange); font-weight: 600;">Within 4 Hours</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Standard Issues</span>
+                            <span class="hours-time" style="color: var(--success-green); font-weight: 600;">Same Business Day</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">General Inquiries</span>
+                            <span class="hours-time">Within 24 Hours</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Project Consultations</span>
+                            <span class="hours-time">Within 48 Hours</span>
+                        </div>
+                        
+                        <div class="content mt-4">
+                            <h4 class="title is-6 has-text-white">What to Expect</h4>
+                            <p class="has-text-light">
+                                When you contact us, you'll speak with a real person who understands technology. 
+                                No endless phone trees or overseas call centers - just local Maritime expertise 
+                                ready to solve your IT challenges.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="title is-2 has-text-white">Before You Contact Us</h2>
+                <p class="subtitle is-4 has-text-grey-light">Quick answers to common questions</p>
+            </div>
+            <div class="columns">
+                <div class="column is-8 is-offset-2">
+                    <div class="contact-card" style="text-align: left;">
+                        <h4 class="title is-5 has-text-white mb-4">What Information Should I Prepare?</h4>
+                        <div class="content has-text-light">
+                            <p><strong>For IT Support:</strong></p>
+                            <ul style="list-style: disc; margin-left: 2rem;">
+                                <li>Description of the problem and when it started</li>
+                                <li>Any error messages you're seeing</li>
+                                <li>Steps you've already tried to resolve the issue</li>
+                                <li>How many users/devices are affected</li>
+                            </ul>
+                            
+                            <p class="mt-4"><strong>For New Projects:</strong></p>
+                            <ul style="list-style: disc; margin-left: 2rem;">
+                                <li>Your business goals and challenges</li>
+                                <li>Current technology setup</li>
+                                <li>Timeline and budget considerations</li>
+                                <li>Number of employees and locations</li>
+                            </ul>
+                            
+                            <p class="mt-4"><strong>For Consultations:</strong></p>
+                            <ul style="list-style: disc; margin-left: 2rem;">
+                                <li>Brief overview of your business</li>
+                                <li>Current IT pain points</li>
+                                <li>Goals for improvement</li>
+                                <li>Preferred meeting format (in-person, video, phone)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4">
+                    <div class="footer-brand">
+                        <div class="logo-container mb-3">
+                            <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                <defs>
+                                    <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="50" cy="50" r="40" fill="url(#footerLogoGradient)" />
+                                <text x="50" y="55" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="20">RTS</text>
+                            </svg>
+                            <span class="logo-text">Rugged Technology Services</span>
+                        </div>
+                        <p class="footer-description">
+                            Empowering businesses across the Maritimes with innovative IT solutions, 
+                            cybersecurity expertise, and reliable technology support.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/RuggedTechnologies/" target="_blank" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-2">
+                    <h4 class="title is-6 has-text-white">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Managed IT</a></li>
+                        <li><a href="services.html">Cybersecurity</a></li>
+                        <li><a href="services.html">Cloud Solutions</a></li>
+                        <li><a href="services.html">Data Backup</a></li>
+                        <li><a href="services.html">Network Setup</a></li>
+                        <li><a href="services.html">Automation</a></li>
+                    </ul>
+                </div>
+                <div class="column is-2">
+                    <h4 class="title is-6 has-text-white">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                    </ul>
+                </div>
+                <div class="column is-4">
+                    <h4 class="title is-6 has-text-white">Contact Info</h4>
+                    <div class="content">
+                        <div class="contact-item mb-3">
+                            <i class="fas fa-map-marker-alt has-text-primary mr-2"></i>
+                            <span>Saint John, New Brunswick</span>
+                        </div>
+                        <div class="contact-item mb-3">
+                            <i class="fas fa-phone has-text-primary mr-2"></i>
+                            <a href="tel:5064206969" class="has-text-light">506-420-6969</a>
+                        </div>
+                        <div class="contact-item mb-3">
+                            <i class="fas fa-envelope has-text-primary mr-2"></i>
+                            <a href="mailto:staff@ruggedtech.ca" class="has-text-light">staff@ruggedtech.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Rugged Technology Services. All rights reserved. | Serving the Maritimes with Pride</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Set current year
+        document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+
+        // Contact form submission
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.firstName || !data.lastName || !data.email || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission (replace with actual form handling)
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            event.target.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        }
+
+        // Mobile navbar toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            
+            if (navbarBurgers.length > 0) {
+                navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const targetElement = document.getElementById(target);
+                        
+                        el.classList.toggle('is-active');
+                        targetElement.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Service card hover effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Enhanced form validation feedback
+        document.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('is-focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.classList.remove('is-focused');
+                if (this.value) {
+                    this.parentElement.classList.add('has-value');
+                } else {
+                    this.parentElement.classList.remove('has-value');
+                }
+            });
+        });
+
+        // Add ripple effect to buttons
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const circle = document.createElement("span");
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+            circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+            circle.classList.add("ripple");
+
+            const ripple = button.getElementsByClassName("ripple")[0];
+            if (ripple) {
+                ripple.remove();
+            }
+
+            button.appendChild(circle);
+        }
+
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', createRipple);
+        });
+    </script>
+</body>
+</html>
