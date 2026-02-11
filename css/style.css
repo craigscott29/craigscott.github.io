@@ -101,25 +101,33 @@ nav .container {
     z-index: 1;
 }
 
-nav h1 {
-    font-family: "Space Grotesk", system-ui, sans-serif;
-    font-size: 1.8rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #00a3e0 0%, #fdb913 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -0.5px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 .nav-brand {
     display: flex;
     align-items: center;
     gap: 1rem;
     text-decoration: none;
     cursor: pointer;
+    color: inherit;
+    margin-left: 0;
+}
+
+.nav-brand:hover h1 {
+    color: inherit;
+    text-decoration: none;
+}
+
+nav h1 {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00a3e0 0%, #fdb913 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0;
 }
 
 .nav-logo {
@@ -138,7 +146,7 @@ nav a {
     position: relative;
 }
 
-nav a::after {
+nav a:not(.nav-brand)::after {
     content: '';
     position: absolute;
     bottom: -6px;
@@ -149,13 +157,13 @@ nav a::after {
     transition: width 0.3s ease;
 }
 
-nav a:hover,
-nav a.active {
+nav a:not(.nav-brand):hover,
+nav a:not(.nav-brand).active {
     color: #00a3e0;
 }
 
-nav a:hover::after,
-nav a.active::after {
+nav a:not(.nav-brand):hover::after,
+nav a:not(.nav-brand).active::after {
     width: 100%;
 }
 
